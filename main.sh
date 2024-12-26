@@ -5,9 +5,19 @@ echo_formatted() {
   echo -e "\033[1;32m$1\033[0m"
 }
 
+# Descargar y ejecutar los scripts auxiliares
+download_and_run() {
+  script_name=$1
+  echo_formatted "Descargando y ejecutando $script_name..."
+  wget -q -O $script_name https://raw.githubusercontent.com/lalojimvel123/Linux-System-Scripts/main/$script_name
+  chmod +x $script_name
+  bash $script_name
+  rm -f $script_name
+}
+
 # Menú principal
 while true; do
-  echo_formatted "Selecciona una opción:"
+  echo_formatted "\nSelecciona una opción:"
   echo "1) Actualizar el sistema"
   echo "2) Montar discos externos"
   echo "3) Instalar OpenMediaVault (OMV)"
@@ -16,23 +26,20 @@ while true; do
 
   case $option in
     1)
-      echo_formatted "Ejecutando actualización del sistema..."
-      bash update_system.sh
+      download_and_run "update_system.sh"
       ;;
     2)
-      echo_formatted "Ejecutando configuración de discos..."
-      bash mount_disks.sh
+      download_and_run "mount_disks.sh"
       ;;
     3)
-      echo_formatted "Ejecutando instalación de OpenMediaVault..."
-      bash install_omv.sh
+      download_and_run "install_omv.sh"
       ;;
     4)
       echo_formatted "Saliendo del script. ¡Hasta luego!"
       exit 0
       ;;
     *)
-      echo "Opción no válida, intenta de nuevo."
+      echo_formatted "Opción no válida, intenta de nuevo."
       ;;
   esac
 done
