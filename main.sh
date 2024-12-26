@@ -25,6 +25,12 @@ main_menu() {
     echo "4) Salir"
     read -p "Opción: " option
 
+    # Verificar si la entrada no está vacía
+    if [ -z "$option" ]; then
+      echo_formatted "No se ingresó ninguna opción. Inténtalo de nuevo."
+      continue
+    fi
+
     case $option in
       1)
         download_and_run "update_system.sh"
