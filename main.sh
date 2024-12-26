@@ -23,9 +23,11 @@ main_menu() {
     echo "2) Montar discos externos"
     echo "3) Instalar OpenMediaVault (OMV)"
     echo "4) Salir"
-    read -p "Opción: " option
 
-    # Verificar si la entrada no está vacía
+    # Forzar el uso del teclado para leer la entrada del usuario
+    read -p "Opción: " option < /dev/tty
+
+    # Validar entrada vacía
     if [ -z "$option" ]; then
       echo_formatted "No se ingresó ninguna opción. Inténtalo de nuevo."
       continue
