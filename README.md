@@ -9,11 +9,10 @@
    ```
    
 2. Ejecutar para Raspberry Pi o cualquier máquina Linux:
-   ```bash
-   wget -O - https://raw.githubusercontent.com/lalojimvel123/Linux-System-Scripts/main/main.sh | sudo bash
-   ```
-   o
    
    ```bash
    git clone https://github.com/lalojimvel123/Linux-System-Scripts.git
+   cd ./Linux-System-Scripts/
+   bash main.sh
    ```
+
