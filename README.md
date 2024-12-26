@@ -4,7 +4,7 @@
 
 1. Clona el repositorio en tu Raspberry Pi o cualquier máquina Linux:
    ```bash
-   git clone https://github.com/TU-USUARIO/Linux-System-Scripts.git
+   git clone https://github.com/lalojimvel123/Linux-System-Scripts.git
    ```
 2. Accede al directorio:
    ```bash
