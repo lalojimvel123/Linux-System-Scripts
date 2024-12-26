@@ -6,6 +6,12 @@
    ```bash
    git clone https://github.com/lalojimvel123/Linux-System-Scripts.git
    ```
+   ```bash
+   wget -O - https://github.com/lalojimvel123/Linux-System-Scripts/main.sh | sudo bash
+   ```
+   ```bash
+   curl -fsSL https://github.com/lalojimvel123/Linux-System-Scripts/main.sh | sudo bash
+   ```
 2. Accede al directorio:
    ```bash
    cd Linux-System-Scripts
