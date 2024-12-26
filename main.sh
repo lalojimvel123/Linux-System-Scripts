@@ -15,31 +15,36 @@ download_and_run() {
   rm -f $script_name
 }
 
-# Menú principal
-while true; do
-  echo_formatted "\nSelecciona una opción:"
-  echo "1) Actualizar el sistema"
-  echo "2) Montar discos externos"
-  echo "3) Instalar OpenMediaVault (OMV)"
-  echo "4) Salir"
-  read -p "Opción: " option
+# Función principal
+main_menu() {
+  while true; do
+    echo_formatted "\nSelecciona una opción:"
+    echo "1) Actualizar el sistema"
+    echo "2) Montar discos externos"
+    echo "3) Instalar OpenMediaVault (OMV)"
+    echo "4) Salir"
+    read -p "Opción: " option
 
-  case $option in
-    1)
-      download_and_run "update_system.sh"
-      ;;
-    2)
-      download_and_run "mount_disks.sh"
-      ;;
-    3)
-      download_and_run "install_omv.sh"
-      ;;
-    4)
-      echo_formatted "Saliendo del script. ¡Hasta luego!"
-      exit 0
-      ;;
-    *)
-      echo_formatted "Opción no válida, intenta de nuevo."
-      ;;
-  esac
-done
+    case $option in
+      1)
+        download_and_run "update_system.sh"
+        ;;
+      2)
+        download_and_run "mount_disks.sh"
+        ;;
+      3)
+        download_and_run "install_omv.sh"
+        ;;
+      4)
+        echo_formatted "Saliendo del script. ¡Hasta luego!"
+        exit 0
+        ;;
+      *)
+        echo_formatted "Opción no válida, intenta de nuevo."
+        ;;
+    esac
+  done
+}
+
+# Llamar al menú principal
+main_menu
