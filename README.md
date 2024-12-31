@@ -13,6 +13,6 @@
    ```bash
    git clone https://github.com/lalojimvel123/Linux-System-Scripts.git
    cd ./Linux-System-Scripts/
-   bash main.sh
+   sudo bash main.sh
    ```
 
