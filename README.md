@@ -5,7 +5,7 @@
 1. asegurate de tener instalado git:
    
    ```bash
-   sudo apt install git
+   sudo apt install git -y
    ```
    
 2. Ejecutar para Raspberry Pi o cualquier máquina Linux:
